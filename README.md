@@ -1,6 +1,6 @@
 # Awesome Neovim Configuration
 
-This repo it to make setting up of [neovim][nvim] >= 0.9 a breeze.
+This repo it to make setting up of [neovim][nvim] >= 0.11 a breeze.
 The setup is powered and managed by [💤 lazy.nvim][lazy-nvim] plugin manager
 
 >If you like [_**helix**_](https://github.com/helix-editor/helix), which I am drifting to gradually, check out my [_**helix config**_][awesome-helix]
@@ -35,9 +35,9 @@ The setup is powered and managed by [💤 lazy.nvim][lazy-nvim] plugin manager
 ![startup time with zig](https://user-images.githubusercontent.com/22438427/232324710-31e6eff9-15a6-4968-9998-503e7dc55cdf.png)
 
 ## ⚡️ Requirement
-- Neovim >= **0.9.0** (needs to be built with **LuaJIT**)
-- git >= **2.40.0** (gitsigns ...)
-- tree-sitter >= **0.20.8** (to enable automatically installing missing parsers when entering buffers)
+- Neovim >= **0.11** (needs to be built with **LuaJIT**)
+- git >= **2.52** (gitsigns ...)
+- tree-sitter >= **0.25** (to enable automatically installing missing parsers when entering buffers)
 - a [Nerd Font](https://www.nerdfonts.com/) **_(optional, for nvim-tree, lualine, bufferline)_**
 
 

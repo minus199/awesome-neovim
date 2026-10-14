@@ -20,10 +20,16 @@ vim.lsp.handlers["textDocument/signatureHelp"] =
     })
 
 -- configure diagnostics signs
-for name, icon in pairs(require("config.defaults").icons.diagnostics) do
-    name = "DiagnosticSign" .. name
-    vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
-end
+vim.diagnostic.config({
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "󰅚 ", --🅴," ""󰢃 "
+            [vim.diagnostic.severity.WARN] = "󰀪 ", --🆆," "
+            [vim.diagnostic.severity.HINT] = "󰌶", --🅸," " "󰛩 "
+            [vim.diagnostic.severity.INFO] = " ", --🅷," ","󰗡 "
+        },
+    },
+})
 
 -- configure debugger diagnostics signs
 for name, icon in pairs(require("config.defaults").icons.debugger) do

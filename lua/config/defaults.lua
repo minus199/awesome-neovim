@@ -1,12 +1,6 @@
 return {
     -- icons used by other plugins
     icons = {
-        diagnostics = {
-            Error = "󰅚 ", --🅴," ""󰢃 "
-            Warn = "󰀪 ", --🆆," "
-            Hint = "󰌶", --🅸," " "󰛩 "
-            Info = " ", --🅷," ","󰗡 "
-        },
         debugger = {
             DapBreakpoint = " ", --▶️breakpoints
             DapBreakpointCondition = " ", --conditional breakpoints

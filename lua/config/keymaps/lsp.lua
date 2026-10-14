@@ -9,10 +9,7 @@ local augroup = utils.augroup
 utils.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr }
 
-    if
-        vim.version.gt(vim.version(), { 0, 9, 0 })
-        and client.server_capabilities.inlayHintProvider
-    then
+    if client.server_capabilities.inlayHintProvider then
         vim.lsp.inlay_hint.enable(true)
     end
     if client.server_capabilities.hoverProvider then
@@ -220,14 +217,14 @@ utils.on_attach(function(client, bufnr)
         if utils.has("lspsaga.nvim") then
             vim.cmd([[Lspsaga diagnostic_jump_prev]])
         else
-            vim.diagnostic.goto_prev()
+            vim.diagnostic.jump({count = -1, float = true})
         end
     end, opts, "goto previous diagnostics")
     map("n", "]d", function()
         if utils.has("lspsaga.nvim") then
             vim.cmd([[Lspsaga diagnostic_jump_next]])
         else
-            vim.diagnostic.goto_next()
+            vim.diagnostic.jump({count = 1, float = true})
         end
     end, opts, "goto next diagnostics")
 

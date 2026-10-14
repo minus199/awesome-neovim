@@ -10,9 +10,7 @@ return {
                     bind = true,
                     max_height = float.max_height,
                     max_width = float.max_width,
-                    hint_inline = function()
-                        return vim.version.gt(vim.version(), { 0, 9, 0 })
-                    end,
+                    hint_inline = true,
                     handler_opts = {
                         border = float.border,
                     },
@@ -111,7 +109,7 @@ return {
             -- you can do any additional lsp server setup here
             setup = {
                 lua_ls = function(server, opts)
-                    require("lspconfig")[server].setup(opts)
+                   vim.lsp.enable(server,opts)
                 end,
             },
         },
@@ -132,7 +130,7 @@ return {
                         return
                     end
                 end
-                require("lspconfig")[server].setup(server_config)
+                   vim.lsp.enable(server,opts)
             end
 
             local servers = opts.servers
